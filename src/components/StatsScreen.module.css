@@ -1,0 +1,274 @@
+.page {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  max-width: 520px;
+  margin: 0 auto;
+  animation: slideUp 0.28s ease;
+}
+
+.header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.closeBtn:hover { color: var(--text); border-color: var(--border-hover); }
+
+.title {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.roundsBadge {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.emptyIcon { font-size: 48px; }
+.emptyHint { font-size: 12px; opacity: 0.6; }
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Win bar */
+.winBar {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 56px;
+}
+
+.winSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  background: rgba(0,229,180,0.08);
+  height: 100%;
+  min-width: 0;
+}
+
+.loseSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  background: rgba(255,60,110,0.08);
+  height: 100%;
+  min-width: 0;
+}
+
+.winSep {
+  width: 1px;
+  height: 100%;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.winLabel { font-size: 12px; font-family: var(--font-mono); color: var(--text-muted); }
+.winCount { font-size: 22px; font-weight: 800; color: var(--text); }
+
+/* Section */
+.section {}
+
+.sectionLabel {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+/* Leaderboard */
+.leaderboard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.lbRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.lbRow:last-child { border-bottom: none; }
+.lbFirst { background: rgba(255,224,51,0.05); }
+
+.lbRank { font-size: 16px; min-width: 28px; }
+.lbAvatar { font-size: 20px; }
+.lbName { flex: 1; font-size: 14px; font-weight: 700; }
+.lbScore {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent3);
+}
+
+/* Breakdown */
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bpCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.bpHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.bpAvatar { font-size: 18px; }
+.bpName { flex: 1; font-size: 13px; font-weight: 700; }
+.bpScore {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent3);
+  font-weight: 700;
+}
+
+.bpStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.bpStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  padding: 8px 4px;
+  gap: 2px;
+}
+
+.bpStatVal {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+
+.bpStatLabel {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* History */
+.historyList {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.histRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.histRow:last-child { border-bottom: none; }
+
+.histRound {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  min-width: 22px;
+}
+
+.histWord {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent3);
+}
+
+.histResult {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  border-radius: 100px;
+  padding: 3px 9px;
+  border: 1px solid;
+}
+
+.histWin {
+  color: var(--accent2);
+  border-color: rgba(0,229,180,0.3);
+  background: rgba(0,229,180,0.06);
+}
+
+.histLose {
+  color: var(--accent);
+  border-color: rgba(255,60,110,0.3);
+  background: rgba(255,60,110,0.06);
+}
